@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    theme:
+      - testdrupal
+id: testdrupal_medium
+label: 'testdrupal Medium'
+locked: false
+pattern: 'j  F,  Y'
