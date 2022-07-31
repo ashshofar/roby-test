@@ -1,0 +1,24 @@
+{{ attach_library('olivero/layout-views-grid-horizontal') }}
+{% set columns = options.columns <= 8 ? options.columns : 8 %}
+
+{# <header>
+	{{ title_prefix }}
+	{{ title_suffix }}
+</header> #}
+
+
+<div class="views-view-grid views-view-grid--grid-horizontal cols-3">
+	<div class="views-view-grid__item">
+		<div class="views-view-grid__item-inner">
+			{{ content.field_image }}
+			{{ content.field_publish_date }}
+			{{ content.body }}
+			<a href="{{ url }}">
+				<button>Detail</button>
+			</a>
+
+
+		</div>
+
+	</div>
+</div>
