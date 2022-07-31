@@ -1,0 +1,59 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+// use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+/**
+ * Implements hook_preprocess().
+ */
+function custom_render_preprocess_page(&$variables)
+{
+    $isfront = \Drupal::service('path.matcher')->isFrontPage();
+   
+    if ($isfront) {
+
+        // $block = \Drupal::entityTypeManager()
+        //     ->getStorage('block')
+        //     ->load('eventlist');
+        // $block = \Drupal\block\Entity\Block::load('eventlist');
+        // $block_content = \Drupal::entityTypeManager()->getViewBuilder('block')->view($block);
+        // // $block_content = \Drupal::entityManager()
+        // //     ->getViewBuilder('block')
+        // //     ->view($block);
+        // // \Drupal::service('renderer')->renderRoot($block_content);
+        // dd($block_content);
+        // // \Drupal::service('renderer')->renderRoot($block_content);
+        // $variables['page']['content_above'] = [     # Specify the region name
+        //     '#theme_wrappers' => ['region'],
+        //     '#region' => 'content_above',             # Specify the region name
+        //     'list_event' => [
+        //         // 'variables' => [
+        //         //     'data' => [],
+        //         // ],
+        //         '#markup' =>  \Drupal::service('renderer')->renderRoot($block_content),
+        //         '#weight' => "-100",
+        //     ],
+
+        // ];
+        // $block = \Drupal\block\Entity\Block::load('event_list');
+        // $variables['my_list_event'] = \Drupal::entityTypeManager()
+        //     ->getViewBuilder('block')
+        //     ->view($block);
+        // return array('#markup' => \Drupal::service('renderer')->renderRoot($block));
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_render_theme()
+{
+    return [
+        'list_event' => [
+            'variables' => [
+                'data' => [],
+            ],
+        ],
+    ];
+}

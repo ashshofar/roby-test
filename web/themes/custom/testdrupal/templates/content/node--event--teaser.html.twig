@@ -92,14 +92,18 @@
     {% endif %} #}
     {% if label and not page %}
       <div class="node__top-wrapper">
-        {{ content.field_image }}
-        <h2{{ title_attributes.addClass('node__title') }}>
+        {# {{ content.field_image }} #}
+        {# <h2{{ title_attributes.addClass('node__title') }}>
           <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
+        </h2> #}
       </div>
     {% endif %}
   </header>
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content|without('field_image', 'links') }}
+    <span>{{ label }}</span>
+    <a href="{{ url }}">
+				<button>Detail</button>
+			</a>
   </div>
 </article>

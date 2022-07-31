@@ -1,0 +1,7 @@
+type: module
+name: Custom Render
+description: 'Render Custom Event and News in region'
+core_version_requirement: ^8.8 || ^9
+php: 7.2
+
+version: '0.0.1'
